@@ -1,0 +1,202 @@
+/* Theming and Assets */
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Press+Start+2P&family=Public+Sans:wght@300&family=Roboto:wght@100&family=Saira&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@700&family=Open+Sans+Condensed:wght@300&family=Press+Start+2P&family=Public+Sans:wght@300&family=Roboto:wght@100&family=Saira&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+#slideImg{
+    width: 100%;
+    height: 100vh;
+    animation: fade 3s linear infinite;
+}
+@keyframes fade{
+    0%{
+        opacity: 0.9;
+    }
+    15%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.9;
+    }
+}
+
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+    position: absolute;
+    top: 0;
+}
+
+.navbar{
+    display:flex;
+    flex-wrap: nowrap;
+    margin: 50px 0px auto;
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+.navbar div{
+    padding: 10px;
+    color: white;
+    font-family: 'Public Sans', sans-serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin:0px 200px;
+    cursor: pointer;
+    position: relative;
+}
+
+/*tooltip*/
+.navbar div:before{
+    --scale: 0;
+    --tooltip-color:rgba(0,0,0,0.3);
+
+    position: absolute;
+    bottom: -.7rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%) scale(var(--scale));
+    transition: 150ms transform;
+    transform-origin: top center;
+}
+
+.navbar div::before{
+    content: attr(data-tootltip);
+    height: 200px;
+    width: 350px;
+    height: max-content;
+    padding: 30px;
+    color: white;
+    background-color: var(--tooltip-color);
+    font-size: 17px;
+}
+
+.navbar div:hover::before{
+    --scale:1;
+}
+
+#instructions::before{
+    width: 500px;
+}
+
+
+
+
+/*title*/
+#title{
+    color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: rgb(197, 195, 195);
+    font-family: 'Asap', sans-serif;
+    font-size: 200px;
+    margin-top: 100px;
+    margin-bottom: -200px;
+}
+#title:hover{
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+
+
+
+/*for the PLAY NOW button*/
+.button{
+    margin-top: 340px;
+    margin-left: 40%;
+}
+.primary-button{
+    cursor: pointer;
+    font-family: 'Ropa Sans',Helvetica;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    border: 1px solid white;
+    padding: 1.3rem 4rem;
+    background: url('https://svgshare.com/i/Kyn.svg');
+    background-size: 130%;
+    background-position:500%;
+    background-repeat: no-repeat;
+    background-color: #ff3848;
+    transition: 0.3s ease-in-out;
+    transition-property: background-position,border,color;
+    position: relative;
+    z-index: 1;
+}
+
+.primary-button:hover{
+    border: 1px solid #FF4655;
+    color: white;
+    background-position: 50%;
+}
+.primary-button::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 0.2rem;
+    height: 0.2rem;
+    top: -1px;
+    left: -1px;
+    transition:background-color 0.15s ease-in-out;
+}
+.primary-button:hover::before{
+    background-color: #FF4655;
+}
+.primary-button::after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 0.4rem;
+    height: 0.4rem;
+    bottom: -1px;
+    right: -1px;
+    transition:background-color 0.15s ease-in-out;
+}
+
+.button-borders{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+.button-borders::before{
+    content: "";
+    position: absolute;
+    width: calc(100% + 0.9rem);
+    height: 50%;
+    left: -0.5rem;
+    top: -0.5rem;
+    border: 1px solid white;
+    border-bottom: 0px;
+    opacity: 0.3;
+}
+.button-borders::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 0.9rem);
+    height: 50%;
+    left: -0.5rem;
+    bottom: -0.5rem;
+    border: 1px solid white;
+    border-top: 0px;
+    opacity: 0.3;
+    z-index: 0;
+}

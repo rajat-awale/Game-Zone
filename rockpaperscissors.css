@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Red+Rose&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kurale&family=Red+Rose&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Public+Sans:wght@300&family=Roboto:wght@100&family=Saira&display=swap');
+body{
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    background-image: url("images/rockpaperscissorbackground.png");
+    grid-template-rows:20% 5% 75%;
+    color: rgba(255, 255, 255, 0.719);
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.score{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: monospace;
+    letter-spacing: 4px;
+
+}
+
+.score div{
+    border: 1px solid white;
+    margin: auto;
+    padding: 1px;
+    width: 4cm;
+    text-align: center;
+    background-image: url("images/score.png");
+    background-size:cover;
+    background-position: center;
+}
+
+.score p{
+    margin-top: -10px;
+    font-weight: bolder;
+    font-size: 0.6cm;
+}
+
+
+h1{
+    font-size: 1cm;
+    font-family: 'Red Rose', cursive;
+}
+
+button{
+    padding: 15px;
+    width: 4cm;
+    font-size: 0.7cm;
+    font-family: 'Public Sans', sans-serif;
+    border: none;
+    color: rgb(15, 9, 9);
+    font-weight: bold;
+    background-color: rgb(225, 152, 250);
+    cursor: pointer;
+    margin-top: 1cm;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: rgb(19, 114, 51);
+}
+.signs{
+    font-size: 3cm;
+    letter-spacing: 6cm;
+    margin-left: 240px;
+    }
+
+.main{
+    text-align: center;
+    margin-top: 1.5cm;
+}
+
+
+
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+li{
+    margin: 20px;
+}
+
+
+
+
+
+
+
+/*for js*/
+#intro{
+    visibility: visible;
+    pointer-events: visible;
+}
+
+#game{
+
+    visibility: hidden;
+    pointer-events: none;
+    margin-top: -4cm;
+}
+
+.champ{
+    margin-top: 4cm;
+}

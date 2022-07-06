@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@100&family=Saira&display=swap');
+
+body{
+  margin:0;
+  padding:0;
+  background-image:url("images/molewallpaper.jfif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  width: 500px;
+  height: 300px;
+  margin: 30px auto;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.instructions{
+    font-size: 15px;
+}
+
+/*title*/
+h1{
+  font-family: 'Press Start 2P';
+  height: 30px;
+}
+p{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+}
+.game-top {
+  padding-top: 10px;
+  width: 100%;
+  height: 90px;
+  margin-bottom: 70px;
+}
+.game-top p {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+b{
+  margin-left: 40px;
+  font-size: 20px;
+}
+#game-state{
+  background-color: #c8ffca; /* Green */
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+input{
+  margin-right:10px ;
+}
+#game-score{
+  font-size: 30px;
+}
+
+/*start button*/
+.start{
+  background-color: initial;
+  background-image:linear-gradient(-180deg, #FF7E31, #E62C03);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 200px;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
+}
+
+.start:hover {
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+.game-content {
+  overflow: auto;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  background-color: #ddf;
+  background-image: url("images/molebackground.png");
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 100% 100%;
+}
+
+.game-content ul {
+
+  list-style: none;
+}
+.game-content li {
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 30px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #67d0b4;
+  box-shadow: 0 0 50px #706565 inset;
+}
+.game-content li:last-child {
+  margin-bottom: 50px;
+}
+
+.game-content div {
+  position: relative;
+  margin-top: 1px;
+  margin-left: 2px;
+  width: 28px;
+  height: 26px;
+  border-radius: 50%/40%;
+  background-image: url("images/mole.jpg");
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+}
+
+.game-content div.hamster {
+  background-color: #dfb25d;
+}
+.game-content div.hamster[clicked="1"]::after {
+  content: "x";
+  line-height: 20px;
+  font-size: 40px;
+  color: #494e4a;
+}
+
+
+@media screen and (max-width: 500px) {
+  .container {
+      width: 290px;
+  }
+  .game-content ul {
+      padding: 0;
+  }
+  .game-content li {
+      margin-left: 5px;
+      width: 90px;
+  }
+  .game-content div {
+      margin-left: 20px;
+  }
+}
+
+.game-content div.active {
+  -webkit-animation: mouse-move 2s ease-in-out infinite;
+      animation: mouse-move 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes mouse-move {
+  50% {
+      margin-top: -10px;
+      opacity: 1;
+  }
+  100% {
+      margin-top: 1px;
+      opacity: 1;
+  }
+}
+@keyframes mouse-move {
+  50% {
+      margin-top: -10px;
+      opacity: 1;
+  }
+  100% {
+      margin-top: 1px;
+      opacity: 1;
+  }
+}
